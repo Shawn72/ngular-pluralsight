@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {IEvent} from "../shared/index";
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -30,18 +31,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     `]
 })
 export class EventsThumbnailComponent{
-    @Input()event:any
+    @Input()event:IEvent
     someProperty:any = "Shawn's fav gal names: Daisy, Cherry, Nikolina, Cassandra"
     @Output() eventClick = new EventEmitter();
-
-   // code event functions
-    handleClickMe(){
-    // console.log('You clicked me!');
-        this.eventClick.emit(this.event.name);
-    }
-    logFoo(){
-        console.log('Foo Logged')
-    }
 
     getStartTimeClass(){
       //const isEarlyStart = this.event.time === '8:00 am'

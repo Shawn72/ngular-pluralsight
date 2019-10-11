@@ -1,4 +1,6 @@
-import { Component } from '@angular/core'
+import {Component, Inject} from '@angular/core'
+import {AuthService} from "../user/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'nav-bar',
@@ -13,5 +15,8 @@ import { Component } from '@angular/core'
     ]
 })
 export class NavBarComponent{
-
+  authService:AuthService
+  constructor(@Inject(AuthService) authService: AuthService, @Inject(Router) router){
+    this.authService = authService
+  }
 }
